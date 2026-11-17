@@ -1,38 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <link rel="stylesheet" href="style.css" />
-    <script src="https://cesium.com/downloads/cesiumjs/releases/1.83/Build/Cesium/Cesium.js"></script>
-    <link
-      href="https://cesium.com/downloads/cesiumjs/releases/1.83/Build/Cesium/Widgets/widgets.css"
-      rel="stylesheet"
-    />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>WindFreight – Kite-Assisted Shipping Simulation</title>
+    <meta name="description" content="3D simulation of how much fuel and CO₂ a towing kite saves a container ship on real sea routes, with real wind data (NOAA GFS, January 2024)." />
+    <meta name="theme-color" content="#0a1f3a" />
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/dat-gui/0.7.6/dat.gui.min.js"></script>
+    <link rel="icon" href="/favicon.ico" sizes="32x32" />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://windfreight.netlify.app/" />
+    <meta property="og:title" content="WindFreight" />
+    <meta property="og:description" content="How much fuel and CO₂ can a towing kite save a container ship? A 3D simulation with real wind data." />
+    <meta property="og:image" content="https://windfreight.netlify.app/og-image.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta name="twitter:card" content="summary_large_image" />
   </head>
 
   <body>
-    <div id="cesiumContainer"></div>
-    <script src="caesiumAccessToken.js"></script>
-
-    <script src="routes.js"></script>
-    <script src="settings.js"></script>
-
-    <!--Wind-->
-    <script src="util.js"></script>
-    <script src="dataProcess.js"></script>
-    <script src="customPrimitive.js"></script>
-    <script src="particlesComputing.js"></script>
-    <script src="particlesRendering.js"></script>
-    <script src="particleSystem.js"></script>
-    <script src="wind3D.js"></script>
-    <script src="gui.js"></script>
-
-    <!--Ship-->
-    <script src="ship.js"></script>
-    <script src="kite.js"></script>
-
-    <!--App-->
-    <script src="app.js"></script>
+    <noscript>WindFreight needs JavaScript and WebGL to run.</noscript>
+    <div id="app"></div>
+    <script type="module" src="/src/main.js"></script>
   </body>
 </html>

@@ -1,0 +1,133 @@
+:root {
+  /* based on the page's theme colour #0a1f3a */
+  --glass: rgba(10, 31, 58, 0.64);
+  --glass-strong: rgba(7, 22, 42, 0.86);
+  --line: rgba(160, 200, 235, 0.14);
+  --line-strong: rgba(160, 200, 235, 0.28);
+  --ink: #e9f1f8;
+  --muted: #92a9c1;
+  --faint: #5f7891;
+  /* amber = the kite is pulling / wind, sea green = savings */
+  --kite: #f3b450;
+  --save: #4fd1b5;
+  --warn: #ff8a6b;
+
+  --font: "Barlow", system-ui, sans-serif;
+  --font-num: "Barlow Semi Condensed", "Barlow", system-ui, sans-serif;
+
+  --gap: 16px;
+  --radius-panel: 18px;
+  --radius-control: 10px;
+  --blur: blur(18px) saturate(150%);
+
+  color-scheme: dark;
+}
+
+body,
+html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  overflow: hidden;
+  background: #0a1f3a;
+  color: var(--ink);
+  font-family: var(--font);
+  font-size: 14px;
+  line-height: 1.4;
+  -webkit-font-smoothing: antialiased;
+}
+
+#app {
+  position: fixed;
+  inset: 0;
+}
+
+button,
+select,
+input {
+  font: inherit;
+  color: inherit;
+}
+
+:focus-visible {
+  outline: 2px solid var(--save);
+  outline-offset: 2px;
+}
+
+#app .glass,
+#app .glass * {
+  box-sizing: border-box;
+}
+
+/* Cesium's attribution (required by Cesium ion) sits in its own strip below the playback bar;
+   the Viewer sets left/bottom of this container as inline styles on every resize, hence !important */
+.cesium-viewer-bottom {
+  left: 16px !important;
+  bottom: 3px !important;
+}
+
+.cesium-widget-credits {
+  font-size: 11px;
+  opacity: 0.6;
+}
+
+.cesium-widget-credits a,
+.cesium-credit-expand-link {
+  color: var(--muted) !important;
+}
+
+/* the ion logo is 28 px high, the strip below the playback bar only about 20 px */
+.cesium-credit-logoContainer img {
+  height: 16px;
+  width: auto;
+  vertical-align: middle;
+}
+
+.glass {
+  background: var(--glass);
+  backdrop-filter: var(--blur);
+  -webkit-backdrop-filter: var(--blur);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-panel);
+  box-shadow: 0 12px 40px rgba(2, 10, 22, 0.45);
+}
+
+.num {
+  font-family: var(--font-num);
+  font-variant-numeric: tabular-nums;
+}
+
+.icon-button {
+  display: inline-grid;
+  place-items: center;
+  width: 34px;
+  height: 34px;
+  padding: 0;
+  border: 1px solid transparent;
+  border-radius: var(--radius-control);
+  background: transparent;
+  cursor: pointer;
+  color: var(--muted);
+}
+
+.icon-button:hover {
+  color: var(--ink);
+  background: rgba(160, 200, 235, 0.1);
+}
+
+.icon-button:disabled {
+  opacity: 0.35;
+  cursor: default;
+}
+
+.icon-button svg {
+  width: 18px;
+  height: 18px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    transition: none !important;
+    animation: none !important;
+  }
+}
